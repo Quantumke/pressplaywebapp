@@ -1,0 +1,2 @@
+jQuery(document).ready(function(){jQuery(window).load(function(){dfRenderBanner();});})
+function dfRenderBanner(){var urlAjax=ajax_script.ajaxurl;var loading='loading...';jQuery.ajax({type:'POST',url:urlAjax,data:{action:'df_render_banner'},beforeSend:function(){jQuery('<div id="de-banner-promo" class="container-banner-promo clearfix"></div>').prependTo('body').hide().slideDown();jQuery('#de-banner-promo').html('<div id="de-banner-promo-loading">'+loading+'</div>');},success:function(response){jQuery('#de-banner-promo').html(response);}});}
