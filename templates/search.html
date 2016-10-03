@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>SEARCH RESULTS {{ query }}</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,900,700">
+		{% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+		<link rel="stylesheet" id="type-stylesheet" href="{% static 'css/goliath.css' %}">
+		<link rel="stylesheet" href="{% static 'css/goliath-tablet.css' %}">
+		<link rel="stylesheet" href="{% static 'css/goliath-phone.css' %}">
+		<link rel="stylesheet" href="{% static 'css/demo.css' %}">
+		<link rel="stylesheet" href="{% static 'demo/colorpicker/css/bootstrap-colorpicker.min.css' %}">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:900,100,300,400">
+		<script src="{% static 'js/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
+	</head>
+
+	<body class="preload">
+
+		<script type="text/javascript">
+			var demo_base_url = '';
+		</script>
+{#        <div class="style-editor off-canvas">#}
+{##}
+{#            <a href="#" class="tab"></a>#}
+{##}
+{#            <div class="theme-title">#}
+{#                <p>Goliath</p>#}
+{#                <p>Style editor</p>#}
+{#            </div>#}
+{##}
+{#            <div class="settings-block">#}
+{#                <p class="title">Page style presets</p>#}
+{#                <div class="settings presets">#}
+{#                    <a href="#" id="news" class="setting">#}
+{#                        <span class="style page" style="background: url(demo/images/style-editor-thumb-1.jpg) 0 0 no-repeat;"></span>#}
+{#                        <i>Original</i>#}
+{#                    </a>#}
+{#                    <a href="#" id="fashion" class="setting">#}
+{#                        <span class="style page" style="background: url(demo/images/style-editor-thumb-2.jpg) 0 0 no-repeat;"></span>#}
+{#                        <i>Dark</i>#}
+{#                    </a>#}
+{#                    <a href="#" id="tech" class="setting">#}
+{#                        <span class="style page" style="background: url(demo/images/style-editor-thumb-3.jpg) 0 0 no-repeat;"></span>#}
+{#                        <i>White</i>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="settings-block">#}
+{#                <p class="title">Accent color</p>#}
+{#                <div class="settings accent-color">#}
+{#                    <a href="#" id="orange" class="setting">#}
+{#                        <span class="style color" style="background: #ff5732;"></span>#}
+{#                    </a>#}
+{#                    <a href="#" id="green" class="setting">#}
+{#                        <span class="style color" style="background: #20c300;"></span>#}
+{#                    </a>#}
+{#                    <a href="#" id="blue" class="setting">#}
+{#                        <span class="style color" style="background: #007ef4;"></span>#}
+{#                    </a>#}
+{#                    <a href="#" id="yellow" class="setting">#}
+{#                        <span class="style color" style="background: #f2ab00;"></span>#}
+{#                    </a>#}
+{#                    <a href="#" id="gray" class="setting">#}
+{#                        <span class="style color" style="background: #858585;"></span>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="settings-block">#}
+{#                <p class="title">Background style</p>#}
+{#                <div class="settings background-style">#}
+{#                    <a href="#" id="bg_style_1" class="setting">#}
+{#                        <span class="style background" style="background: url(demo/images/style-editor-bg-2.jpg) 0 0 no-repeat;"></span>#}
+{#                        <b>Boxed<br/>active</b>#}
+{#                    </a>#}
+{#                    <a href="#" id="bg_style_2" class="setting">#}
+{#                        <span class="style background" style="background: url(demo/images/style-editor-bg-1.jpg) 0 0 no-repeat;"></span>#}
+{#                        <b>Boxed<br/>solid</b>#}
+{#                    </a>#}
+{#                    <a href="#" id="bg_style_3" class="setting">#}
+{#                        <span class="style background" style="background: url(demo/images/style-editor-bg-3.jpg) 0 0 no-repeat;"></span>#}
+{#                        <b>Boxed<br/>image</b>#}
+{#                    </a>#}
+{#                    <a href="#" id="bg_style_4" class="setting">#}
+{#                        <span class="style background" style="background: url(demo/images/style-editor-bg-4.jpg) 0 0 no-repeat;"></span>#}
+{#                        <b>Full<br/>width</b>#}
+{#                    </a>#}
+{#                </div>#}
+{#                <div class="more">#}
+{#                    <a href="#" class="background_colorpicker">Choose custom color</a> <s>#EFEFEF</s> <span style="background: #efefef;"></span>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="settings-footer">#}
+{#                <p><a href="#" class="reset">Reset everything</a></p>#}
+{#                <a href="http://planetshine.net/" target="_blank"><img src="demo/images/logo-planetshine-1.png"></a>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+
+		<div id="particles"></div>
+
+		<!-- Trending -->
+				<div class="container trending">
+			<div class="title-default">
+				<a href="#" class="active">Trending</a>
+			</div>
+			<div class="controls">
+				<div>
+					<a href="#" id="ticker-prev"><i class="fa fa-caret-up"></i></a>
+					<a href="#" id="ticker-next"><i class="fa fa-caret-down"></i></a>
+					<a href="#" class="pause"><i class="fa fa-pause"></i></a>
+				</div>
+			</div>
+			<div class="items-wrapper">
+				<ul id="newsticker" class="items newsticker cycle-slideshow"
+					data-index="1"
+	                data-cycle-slides="> li"
+	                data-cycle-auto-height="calc"
+	                data-cycle-paused="false"
+	                data-cycle-speed="500"
+	                data-cycle-next="#ticker-next"
+	                data-cycle-prev="#ticker-prev"
+	                data-cycle-fx="scrollVert"
+	                data-cycle-log="false"
+	                data-cycle-pause-on-hover="true"
+	                data-cycle-timeout="2000">
+                    {% for marque in marque%}
+					<li class="item hot">
+						<a href="{{ marque.get_absolute_url }}"><i class="tag-default">Hot</i>{{ marque.title }}</a>
+						<span class="legend-default"><i class="fa fa-clock-o"></i>{{ marque.pub_date }}</span>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+
+			<div class="social">
+				<a href="#"><i class="fa fa-twitter-square"></i></a>
+				<a href="#"><i class="fa fa-facebook-square"></i></a>
+				<a href="#"><i class="fa fa-youtube-square"></i></a>
+				<a href="#"><i class="fa fa-google-plus-square"></i></a>
+				<a href="#"><i class="fa fa-pinterest-square"></i></a>
+			</div>
+		</div>
+
+		<!-- Header -->
+		<header class="container header">
+			<div class="logo-image">
+				<a href="goliath-homepage.html"><img alt="" src="img/logo-goliath-1.png"></a>
+			</div>
+			<div class="banner-728x90">
+				<a href=""><img alt="" src="{% static 'images/banner-728x90.png' %}"></a>
+			</div>
+		</header>
+
+		<!-- Menu responsive -->
+		<div class="navbar-wrapper navbar-wrapper-responsive">
+			<div class="navbar navbar-default menu">
+				<div class="container">
+					<ul class="nav">
+						<li class="active"><a href="/">Home</a></li>
+						<li class="dropdown bars">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+							<div class="dropdown-menu full-width">
+								<ul>
+									<li><a href="/">Home</a></li>
+
+
+								</ul>
+							</div>
+						</li>
+
+
+						<li class="dropdown search">
+							<form class="search" method="get" action="/search/" >
+							<input type="text" name="q" class="form-control" placeholder="Search here">
+							</form>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Menu -->
+		<div class="navbar-wrapper menu-primary" data-spy="affix" data-offset-top="191">
+			<div class="navbar navbar-default menu">
+				<div class="container">
+					<ul class="nav">
+						<li class="active"><a href="/">Home</a></li>
+
+
+
+						<li class="menu-spacer"></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Homepage content -->
+		<div class="container homepage-content">
+
+			<div class="main-content-column-1">
+
+				<!-- Search results -->
+				<div class="blog-block-1 search-results">
+
+					<div class="title-default">
+						<a href="" class="active">Search results</a>
+					</div>
+
+					<div class="search-query-1">
+						<div>
+							<p>Searched for</p>
+							<span class="legend-default"><i class="fa fa-bars"></i>{{ count }} results found</span>
+						</div>
+						<div>
+							<span>{{ query }}</span>
+						</div>
+					</div>
+
+					<div class="items">
+{% if results %}
+                        {% for results in results %}
+						<div class="post-item">
+							<div class="image">
+								<a href="../{{ results.get_absolute_url }}">
+                                    <img src="../images/{{MEDIA_URL}}{{ results.image1 }}" height="180" width="180"></a>
+							</div>
+							<div class="title">
+								<h2><a href="../{{ results.get_absolute_url }}">
+{{ results.title }}                              </h2>
+								<p><i class="tag-default">{{ results.tags }}</i><span class="legend-default"><i class="fa fa-clock-o">
+
+                                </i>{{ results.pub_date }}<i class="fa fa-comments"></i>22</span></p>
+							</div>
+							<div class="intro">
+{{ results.excerpt }}								<a href="../{{ results.get_absolute_url }}" class="more-link">Read more</a>
+							</div>
+						</div>
+
+{% endfor %}
+    {% else %}
+    <p>No results</p>
+                    {% endif %}
+
+					</div>
+
+				</div>
+
+				<!-- Pages -->
+				<div class="pages">
+					<ul class="pagination">
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li class="more"><a href="#">...</a></li>
+						<li><a href="#">28</a></li>
+						<li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+						<li class="previous"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+					</ul>
+				</div>
+
+			</div>
+
+
+			<!-- Sidebar -->
+			<div class="main-sidebar">
+
+				<!-- Tabs -->
+				<div class="widget-tabs switchable-tabs mobile">
+
+					<div class="title-default">
+						<a href="#" class="active">Trending</a>
+						<a href="#">Recent</a>
+						<a href="#">Comments</a>
+					</div>
+
+					<div class="tabs-content">
+
+						<div class="items">
+
+					 {% for trending in trending %}
+							<div class="post-item" data-overlay="1" data-overlay-excerpt="{{ trending.title }}" data-overlay-url="../{{ trending.get_absolute_url }}">
+								<div class="image">
+
+									<a href="../{{ trending.get_absolute_url }}"><img alt="" src="../images/{{MEDIA_URL}}{{ trending.image1 }}" height="50" width="50"></a>
+								</div>
+								<div class="title">
+									<h2><a href="../{{ trending.get_absolute_url }}">{{ trending.title }}</a></h2>
+									<p><i class="tag-default">{{ trending.tags }}</i><span class="legend-default"><i class="fa fa-clock-o"></i>{{ trending.pub_date }}<i class="fa fa-comments"></i>22</span></p>
+								</div>
+							</div>
+
+					{% endfor %}
+						</div>
+
+
+						<div class="items">
+
+							    {% for recent in recent %}
+							<div class="post-item" data-overlay="1" data-overlay-excerpt="{{ recent.title }}" data-overlay-url="{{ recent.get_absolute_url }}">
+								<div class="image">
+
+									<a href="../{{ recent.get_absolute_url }}"><img alt="" src="../images/{{MEDIA_URL}}{{ recent.image1 }}" height="50" width="50"></a>
+								</div>
+								<div class="title">
+									<h2><a href="../{{ recent.get_absolute_url }}">{{ recent.title }}</a></h2>
+									<p><i class="tag-default">{{ recent.tags }}</i><span class="legend-default"><i class="fa fa-clock-o"></i>{{ recent.pub_date }}<i class="fa fa-comments"></i>22</span></p>
+								</div>
+							</div>
+{% endfor %}
+						</div>
+
+
+						<div class="items">
+                            {% for comments in comments %}
+							<div class="post-item" data-overlay="1" data-overlay-excerpt="{{comments.comment}}" data-overlay-url="">
+								<div class="image">
+                                    <a href="">{{comments.user_name}}</a>
+								</div>
+								<div class="title">
+									<h2><a href="">{{comments.comment}}</a></h2>
+									<p><i class="tag-default">Comments</i><span class="legend-default"><i class="fa fa-clock-o"></i>{{comments.submit_date}}
+<!--                                        <i class="fa fa-comments"></i>22-->
+</span></p>
+								</div>
+							</div>
+
+							{% endfor %}
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="banner-300x250">
+					<a href="goliath-post-1.html"><img src="{% static 'images/banner-300x250.png' %}"></a>
+				</div>
+
+				<!-- Latest reviews -->
+
+
+				<!-- Archive -->
+
+
+				<!-- Tags -->
+
+
+			</div>
+
+		</div>
+
+		<div class="container banner-728x90">
+			<a href="goliath-post-1.html"><img src="{% static 'images/banner-728x90.png' %}"></a>
+		</div>
+
+		<!-- Footer -->
+		<footer class="container footer">
+
+			<div class="widget about">
+				<div class="title-default">
+					<a href="#" class="active">About us</a>
+				</div>
+				<div class="text">
+					<p class="logo"><a href="goliath-post-1.html"><img src="img/logo-goliath-2.png"></a></p>
+					Lorem ipsum dolor sit amet, con se ctetur adipi scing elit. Ferm entum pulvinar nislet. Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Donec pulvinar nislet. Praesent non lacus fermentu morci feugiat gravida vitae.
+				</div>
+			</div>
+
+			<div class="widget page-map">
+				<div class="title-default">
+					<a href="#" class="active">Page map</a>
+				</div>
+				<div class="items archives">
+					<table class="table">
+						<tr>
+							<td><a href="#">Technology</a>23</td>
+							<td><a href="#">Travel</a>194</td>
+						</tr>
+						<tr>
+							<td><a href="#">Reviews</a>125</td>
+							<td><a href="#">Fitness</a>445</td>
+						</tr>
+						<tr>
+							<td><a href="#">Breaking news</a>660</td>
+							<td><a href="#">Politics</a>635</td>
+						</tr>
+						<tr>
+							<td><a href="#">Automotive</a>123</td>
+							<td><a href="#">Local activies</a>223</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="widget tags">
+				<div class="title-default">
+					<a href="#" class="active">Tag cloud</a>
+				</div>
+				<div class="items tag-cloud">
+					<a href="#" class="tag-1"><span>travel</span><s>15</s></a>
+					<a href="#" class="tag-1"><span>running</span><s>20</s></a>
+					<a href="#" class="tag-1"><span>iphone</span><s>8</s></a>
+					<a href="#" class="tag-1"><span>fitness</span><s>9</s></a>
+					<a href="#" class="tag-1"><span>virtual reality</span><s>3</s></a>
+					<a href="#" class="tag-1"><span>tablet</span><s>30</s></a>
+					<a href="#" class="tag-1"><span>beach</span><s>16</s></a>
+					<a href="#" class="tag-1"><span>cycling</span><s>25</s></a>
+					<a href="#" class="tag-1"><span>hockey</span><s>16</s></a>
+					<a href="#" class="tag-1"><span>coffee shop</span><s>8</s></a>
+					<a href="#" class="tag-1"><span>mountains</span><s>19</s></a>
+					<a href="#" class="tag-1"><span>fitness</span><s>9</s></a>
+					<a href="#" class="tag-1"><span>tablet</span><s>30</s></a>
+					<a href="#" class="tag-1"><span>running</span><s>20</s></a>
+					<a href="#" class="tag-1"><span>iphone</span><s>8</s></a>
+				</div>
+			</div>
+
+		</footer>
+
+		<!-- Copyright -->
+		<div class="container copyright">
+			<div class="left">
+				© 2014 <a href="#">Planetshine</a> HTML template <a href="#">Goliath</a>. Powered by Bootstrap 3.0
+			</div>
+			<div class="right">
+				<ul>
+					<li><a href="#">Contacts us</a></li>
+					<li><a href="#">Shortcodes</a></li>
+					<li><a href="#">Legal</a></li>
+					<li>
+						<a href="#"><i class="fa fa-twitter-square"></i></a>
+						<a href="#"><i class="fa fa-facebook-square"></i></a>
+						<a href="#"><i class="fa fa-youtube-square"></i></a>
+						<a href="#"><i class="fa fa-google-plus-square"></i></a>
+						<a href="#"><i class="fa fa-pinterest-square"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+			<script src="{% static 'js/jquery-1.11.1.js' %}"></script>
+		<script src="{% static 'js/bootstrap.js' %}"></script>
+		<script src="{% static 'js/bootstrap-hover-dropdown.js' %}"></script>
+		<script src="{% static 'js/jquery.particleground.js' %}"></script>
+		<script src="{% static 'js/jquery.cycle2.min.js' %}"></script>
+		<script src="{% static 'js/jquery.cycle2.scrollVert.js' %}"></script>
+		<script src="{% static 'js/jquery.cycle2.swipe.min.js' %}"></script>
+		<script src="{% static 'js/jquery.hoverintent.min.js' %}"></script>
+		<script src="{% static 'js/jquery.inview.js' %}"></script>
+		<script src="{% static 'js/jquery.ui.core.min.js' %}"></script>
+		<script src="{% static 'js/jquery.ui.effect.min.js' %}"></script>
+		<script src="{% static 'js/jquery.ui.effect-size.min.js' %}"></script>
+		<script src="{% static 'js/jquery.ui.effect-slide.min.js' %}"></script>
+		<script src="{% static 'js/goliath.js' %}"></script>
+		<script src="{% static 'demo/colorpicker/js/bootstrap-colorpicker.min.js' %}"></script>
+		<script src="{% static 'js/demo.js' %}"></script>
+	</body>
+</html>
